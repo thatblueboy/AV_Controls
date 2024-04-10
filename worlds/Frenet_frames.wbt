@@ -99,8 +99,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.08528277688299951 0.04475102797397983 -0.9953512914857731 2.8168366661369832
-  position -860.2579611062392 10.351777881963041 5.756966450292469
+  orientation 0.23264491564658854 0.0694108380181463 -0.970081686658093 2.8276989384982913
+  position -829.3010457815028 13.732713082468177 29.833126999527785
   near 1
   follow "vehicle"
   followSmoothness 0
@@ -158,28 +158,18 @@ StraightRoadSegment {
   length 5000
 }
 DEF WEBOTS_VEHICLE0 LincolnMKZ {
-  hidden position_0_0 -8.061566535836462e-07
-  hidden position2_0_0 2259.5995457715644
-  hidden position_0_1 8.16021053650989e-07
-  hidden position2_0_1 2259.6602367415553
-  hidden position_0_2 2259.037121573302
-  hidden position_0_3 2259.659802588367
-  hidden linearVelocity_0 -7.713559212765326e-06 1.4356831044491594e-10 -2.249544926704986e-05
-  hidden angularVelocity_0 -2.6227596077776013e-10 -1.4752371815540847e-05 -4.041314606313341e-12
-  hidden rotation_1 -4.030783267918065e-07 0.9999999999999045 1.6909658651027502e-07 2.347164813086792
-  hidden linearVelocity_1 -5.613362919228267e-06 9.412771248770305e-11 -1.0347212401772929e-06
-  hidden angularVelocity_1 -2.617050378030484e-10 -1.4948290947568053e-05 -3.909003013933571e-12
-  hidden rotation_2 -4.080105268254761e-07 -0.9999999999998994 -1.8591831479539804e-07 2.2864738430958984
-  hidden linearVelocity_2 -5.613354274667364e-06 9.407257036608136e-11 -1.0347325957247013e-06
-  hidden angularVelocity_2 -2.6157455744412984e-10 -1.4948285978075229e-05 -3.983163425146652e-12
-  hidden rotation_3 0 0.9999999999999999 0 2.90958901134903
-  hidden linearVelocity_3 -5.473238120441647e-06 9.480060582859635e-11 2.736468815774673e-08
-  hidden angularVelocity_3 -2.6151109812928307e-10 -1.4868426640992958e-05 -3.991752260138093e-12
-  hidden rotation_4 0 -1 0 2.2869079962843304
-  hidden linearVelocity_4 -5.473232115889007e-06 9.472754396887116e-11 2.735332804352093e-08
-  hidden angularVelocity_4 -2.6112026478735225e-10 -1.4868423202329211e-05 -4.0717294647107385e-12
-  translation -872.3104083438892 3.2000068047746675 0.3130133390523751
-  rotation -0.0014801711078147148 -1.3631703486997942e-07 0.9999989045461365 -3.1415913247114675
+  hidden position_0_0 -8.110612798497972e-07
+  hidden position2_0_0 2263.1292056744314
+  hidden position_0_1 8.221645265616305e-07
+  hidden position2_0_1 2263.189896649239
+  hidden position_0_2 2262.56676608141
+  hidden position_0_3 2263.1894471012915
+  hidden rotation_1 4.055306399248135e-07 -0.9999999999997353 6.040399106916458e-07 1.1824950897805455
+  hidden rotation_2 4.1108226328073594e-07 0.9999999999997508 -5.73883405048178e-07 1.2431860645881214
+  hidden rotation_3 0 -1 0 0.6200554967590192
+  hidden rotation_4 0 1 0 1.242736516640403
+  translation -873.5701078768377 3.200006810475737 0.31319980374491063
+  rotation -0.0016064877566526982 -1.5037044421721004e-07 0.9999987095977 -3.141591318761859
   controller "frenet"
   sensorsSlotFront [
     DEF FRONT_RIGHT_LIDAR IbeoLux {
@@ -272,9 +262,6 @@ DEF WEBOTS_VEHICLE0 LincolnMKZ {
     }
   ]
   sensorsSlotRear [
-    GPS {
-      name "gpsr"
-    }
     DEF REAR DistanceSensor {
       translation 0 0 0.3
       name "distance sensor rear"
@@ -321,6 +308,9 @@ DEF WEBOTS_VEHICLE0 LincolnMKZ {
     }
   ]
   sensorsSlotTop [
+    GPS {
+      name "gps_top"
+    }
     DEF TOP_CAMERA Camera {
       translation 0.48 0 0
       width 512
@@ -335,6 +325,12 @@ DEF WEBOTS_VEHICLE0 LincolnMKZ {
     }
   ]
   sensorsSlotCenter [
+    Accelerometer {
+      name "accelerometer_center"
+    }
+    GPS {
+      name "gps_center"
+    }
     DEF RIGHT DistanceSensor {
       translation 1.32 -0.9 0.3
       rotation 0 0 1 -1.5708
@@ -356,11 +352,6 @@ DEF WEBOTS_VEHICLE0 LincolnMKZ {
       ]
       numberOfRays 2
       aperture 0.9
-    }
-    GPS {
-      translation 5.03 0 0
-      rotation 0 0 1 3.14159
-      name "gpsf"
     }
   ]
 }
