@@ -170,7 +170,7 @@ DEF WEBOTS_VEHICLE0 LincolnMKZ {
   hidden rotation_4 0 1 0 1.242736516640403
   translation -873.5701078768377 3.200006810475737 0.31319980374491063
   rotation -0.0016064877566526982 -1.5037044421721004e-07 0.9999987095977 -3.141591318761859
-  controller "rrt_pp"
+  controller "astar_pp"
   sensorsSlotFront [
     DEF FRONT_RIGHT_LIDAR IbeoLux {
       translation -0.225167 0.71 0
@@ -364,7 +364,7 @@ TrafficCone {
   name "traffic cone(1)"
 }
 TrafficCone {
-  translation -122.40328 10.584217 0
+  translation -900 9 0
   name "traffic cone(2)"
 }
 DEF WEBOTS_VEHICLE2 Solid {

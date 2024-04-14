@@ -5,8 +5,10 @@ import numpy as np
 import time
 from matplotlib import pyplot as plt
 import matplotlib.animation as animation
-from utils.A_star import AStar
+# from utils.A_star import AStar
+from utils.A_star_cost import AStar
 from utils.pure_pursuit import PurePursuit
+from utils.obstacles import check_for_obstacles 
 import json
 
 # variables
@@ -103,14 +105,21 @@ while driver.step() != -1:
     print(x)
     local_map_origin = (x-3.944, 6.85)
 
-    # goals_in_global_frame = [(X+x, Y+y) for (X, Y) in local_goals]
-    # points_in_global_frame = [(XX+x, YY+y) for (XX, YY) in points]
+    # goals_in_global_frame = [(X+x, Y+y) for (X, Y) in locaoints]
 
     global_goal = waypoints[i]
     # print(3.944, y-6.85)
     start_index = closest_key_to_point(local_starts, (-3.944, y-6.85))
     print(start_index)
-    path = astar.astar_search(new_start_index=start_index)
+
+    points_in_global_frame = [(XX+x, YY+y) for (XX, YY) in points]
+
+    obstacle_index = check_for_obstacles(points_in_global_frame)
+    print(obstacle_index)
+
+    # astar.add_obstacles()
+
+    path = astar.astar_search(new_start_index=start_index, new_obstacle_indices = obstacle_index)
     print(path)
 
 
